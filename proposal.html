@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Love Proposal</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(#ff9a9e, #fecfef);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #ff2f63;
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 20px;
+      width: 80%;
+      max-width: 600px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating Hearts */
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      color: #ff2f63;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) translateX(0); opacity: 1; }
+      100% { transform: translateY(-120vh) translateX(40px); opacity: 0; }
+    }
+
+    .play-btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      background: #ff4f79;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .play-btn:hover { background: #ff2f63; }
+
+  </style>
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Komiku/It's_time_for_adventure_/Komiku_-_03_-_Friends.mp3" type="audio/mpeg">
+  </audio>
+
+  <h1>For My One and Only ❤️</h1>
+  <p>Potti unexpexted ga na life lo ochav,unxpected ga deggara ayyav,nuv ante nak chala istam eeee..... nuv na pakana unte nak mastu confidience ostade bangaram anduko telvad ne eyes lo ne ado magic undi. appudu ne meda kopam ochena assal matladadu anukunta but ne sweet voice inka ah eyes chuse melt aypota, Barre lanti ah voice nanu pilustunte antha baga untundooo.... I have no words to describe nak ala propose cheyalo telvad ado try chestuna i hope you would like this..
+  <p><b>I love you bangaram></p>
+
+  <button class="play-btn" onclick="window.location.href='/play_video_page'">Play Video 🎬</button>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (20 + Math.random() * 20) + 'px';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 350);
+  </script>
+</body>
+</html>
